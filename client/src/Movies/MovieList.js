@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+// STEP 3: MAKE MOVIE CARD A LINK TO THE RESPECTIVE MOVIE'S PAGE BASED ON MOVIE ID
+  // GO TO MOVIE.JS TO FINISH THIS LINKING PROCESS
+
 const MovieList = props => {
   const [movies, setMovies] = useState([])
   useEffect(() => {
