@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 
 // STEP 1: WRAP APP IN ROUTER
+
 // GO TO APP.JS FOR STEP 2
 
 const rootElement = document.getElementById("root");

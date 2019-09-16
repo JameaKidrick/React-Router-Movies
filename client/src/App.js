@@ -5,6 +5,8 @@ import SavedList from './Movies/SavedList';
 // STEP 2: CREATE ROUTES
   // ONE ROUTE SHOULD BE DYNAMIC FOR ID
 
+// GO TO MOVIELIST.JS FOR STEP 3
+
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
