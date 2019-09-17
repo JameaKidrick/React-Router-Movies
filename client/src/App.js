@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
+import Movie from './Movies/Movie'
 
 // STEP 2: CREATE ROUTES
   // ONE ROUTE SHOULD BE DYNAMIC FOR ID
@@ -18,10 +19,12 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <MovieList />
+      {/* <MovieList /> */}
 
-      <Route exact path='/' component='MovieList' />
-      <Route exact path='/movies/:id' component='Movie' />
+      <div>
+        <Route exact path='/' component={MovieList} />
+        <Route path='/movies/:id' component={Movie} />
+      </div>
     </div>
   );
 };
