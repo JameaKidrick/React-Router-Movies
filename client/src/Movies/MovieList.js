@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+// STEP 3: MAKE MOVIE CARD A LINK TO THE RESPECTIVE MOVIE'S PAGE BASED ON MOVIE ID
+  // GO TO MOVIE.JS TO FINISH THIS LINKING PROCESS
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
@@ -8,6 +12,7 @@ const MovieList = props => {
       axios
         .get('http://localhost:5000/api/movies')
         .then(response => {
+          console.log('response.data', response.data)
           setMovies(response.data);
         })
         .catch(error => {
@@ -30,22 +35,24 @@ const MovieList = props => {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-    <div className="movie-card">
-      <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-      <h3>Actors</h3>
-
-      {stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
+    <Link to={`/movies/${movie.id}`}>
+      <div className="movie-card">
+        <h2>{title}</h2>
+        <div className="movie-director">
+          Director: <em>{director}</em>
         </div>
-      ))}
-    </div>
+        <div className="movie-metascore">
+          Metascore: <strong>{metascore}</strong>
+        </div>
+        <h3>Actors</h3>
+
+        {stars.map(star => (
+          <div key={star} className="movie-star">
+            {star}
+          </div>
+        ))}
+      </div>
+    </Link>
   );
 }
 
